@@ -1,7 +1,7 @@
 <?php
-require_once 'classes/FileHandler.php';
-require_once 'classes/OscarData.php';
-require_once 'classes/OscarTableRenderer.php';
+require_once 'FileHandler.php';
+require_once 'OscarData.php';
+require_once 'OscarTableRenderer.php';
 
 $maleFile = FileHandler::uploadFile($_FILES['maleFile'], 'uploads/');
 $femaleFile = FileHandler::uploadFile($_FILES['femaleFile'], 'uploads/');
