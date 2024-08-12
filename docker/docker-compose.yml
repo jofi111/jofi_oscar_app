@@ -2,9 +2,9 @@ version: "3.8"
 services:
   web:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker/Dockerfile
     ports:
       - "8080:80"
     volumes:
-      - ./src:/var/www/html
+      - ../src:/var/www/html
