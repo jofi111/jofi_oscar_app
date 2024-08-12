@@ -11,20 +11,24 @@ class OscarData {
     public function getOscarOverviewByYear() {
         $result = [];
         foreach ($this->femaleData as $female) {
-            $year = $female[1];
-            $result[$year]['female'] = [
-                'name' => $female[3],
-                'age' => $female[2],
-                'movie' => $female[4]
-            ];
+            if (isset($female[1], $female[3], $female[2], $female[4])) {
+                $year = $female[1];
+                $result[$year]['female'] = [
+                    'name' => $female[3],
+                    'age' => $female[2],
+                    'movie' => $female[4]
+                ];
+            }
         }
         foreach ($this->maleData as $male) {
-            $year = $male[1];
-            $result[$year]['male'] = [
-                'name' => $male[3],
-                'age' => $male[2],
-                'movie' => $male[4]
-            ];
+            if (isset($male[1], $male[3], $male[2], $male[4])) {
+                $year = $male[1];
+                $result[$year]['male'] = [
+                    'name' => $male[3],
+                    'age' => $male[2],
+                    'movie' => $male[4]
+                ];
+            }
         }
         ksort($result);
         return $result;
@@ -34,7 +38,8 @@ class OscarData {
         $result = [];
         foreach ($this->femaleData as $female) {
             foreach ($this->maleData as $male) {
-                if ($female[4] == $male[4] && $female[1] == $male[1]) {
+                if (isset($female[4], $male[4], $female[1], $male[1], $female[3], $male[3]) &&
+                    $female[4] === $male[4] && $female[1] === $male[1]) {
                     $result[] = [
                         'movie' => $female[4],
                         'year' => $female[1],
@@ -45,7 +50,9 @@ class OscarData {
             }
         }
         usort($result, function ($a, $b) {
-            return strcmp($a['movie'], $b['movie']);
+            $movieA = isset($a['movie']) ? $a['movie'] : '';
+            $movieB = isset($b['movie']) ? $b['movie'] : '';
+            return strcmp($movieA, $movieB);
         });
         return $result;
     }
