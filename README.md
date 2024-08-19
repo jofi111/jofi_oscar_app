@@ -1,4 +1,4 @@
-# jofi Oscar Awards Web Application 4 Fio
+# jofi Oscar Awards Web Application
 
 ## Requirements
 
@@ -10,5 +10,9 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/jofi111/jofi_oscar_app.git
-   cd jofi_oscar_app
+   cd jofi_oscar_app\docker
+   docker-compose up --build
+   
    ```
+2. Open:
+   http://localhost:8080/
