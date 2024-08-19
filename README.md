@@ -1,4 +1,5 @@
 # jofi Oscar Awards Web Application
+Web application opens CSV files from computer with data from Oscars in required table format.
 
 ## Requirements
 
