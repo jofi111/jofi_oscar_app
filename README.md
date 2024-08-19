@@ -1,5 +1,5 @@
 # jofi Oscar Awards Web Application
-Web application opens CSV files from computer with data from Oscars in required table format.
+Web application opens CSV files from computer (in src/uploads folder) with data from Oscars in required table format.
 
 ## Requirements
 
